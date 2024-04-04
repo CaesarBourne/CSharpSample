@@ -11,8 +11,16 @@ int b = 6;
 int c = a + b;
 Console.WriteLine(c);
 
-int man = 2100000000;
-int woman = 2100000000;
 
-long solution = checked(man + woman);
-Console.WriteLine($"SOLUTION EMMANUEL {solution}");
+var fibList = new List<int> { 1, 1 };
+
+while (fibList.Count < 20)
+{
+    fibList.Add(fibList[fibList.Count - 2] + fibList[fibList.Count - 1]);
+
+}
+
+foreach (var val in fibList)
+{
+    Console.WriteLine("Fib " + val);
+}
