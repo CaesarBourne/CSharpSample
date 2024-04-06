@@ -16,18 +16,18 @@ Console.WriteLine(c);
 
 var fibList = new List<int> { 1, 1 };
 
-while (fibList.Count < 20)
-{
-    fibList.Add(fibList[fibList.Count - 2] + fibList[fibList.Count - 1]);
+// while (fibList.Count < 20)
+// {
+//     fibList.Add(fibList[fibList.Count - 2] + fibList[fibList.Count - 1]);
 
-}
+// }
 
-foreach (var val in fibList)
-{
-    Console.WriteLine("Fib " + val);
+// foreach (var val in fibList)
+// {
+//     Console.WriteLine("Fib " + val);
 
 
-}
+// }
 
 StringBuilder builder = new();
 builder.AppendLine("The following arguments are passed:");
