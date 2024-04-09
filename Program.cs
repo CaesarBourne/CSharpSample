@@ -54,9 +54,37 @@ class NewMan
     // Console.WriteLine(builder.ToString());
 
     // Return a success code.
+    static void TestFinally()
+    {
+        FileStream? file = null;
+        //Change the path to something that works on your machine.
+        FileInfo fileInfo = new System.IO.FileInfo("./file.txt");
 
+        try
+        {
+            file = fileInfo.OpenWrite();
+            file.WriteByte(0xF);
+        }
+        finally
+        {
+            // Closing the file allows you to reopen it immediately - otherwise IOException is thrown.
+            file?.Close();
+        }
+
+        try
+        {
+            file = fileInfo.OpenWrite();
+            Console.WriteLine("OpenWrite() succeeded");
+        }
+        catch (IOException)
+        {
+            Console.WriteLine("OpenWrite() failed");
+        }
+    }
 
 }
+
+
 
 public class Car : IEquatable<Car>
 {
